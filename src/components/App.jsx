@@ -3,15 +3,15 @@ import React, { useState } from "react";
 
 const App = () => {
   const [count, setCount] = useState(10)
-
+  const step = 2;
   // console.log("count", count);
 
   const increase = () => {
-    setCount(count + 1)
+    setCount(count + step)
   }
 
   const decrease = () => {
-    setCount(count - 1)
+    setCount(count - step)
   }
 
   return (
