@@ -7,11 +7,16 @@
   "dependencies": {
     "react": "16.8.6",
     "react-dom": "16.8.6",
+<<<<<<< HEAD
     "react-scripts": "3.2.0",
     "serialize-javascript": ">=3.1.0"
+=======
+    "react-scripts": "^3.4.3"
+>>>>>>> this-merge
   },
   "devDependencies": {
-    "typescript": "3.3.3"
+    "typescript": "3.3.3",
+    "node-forge": ">=0.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
