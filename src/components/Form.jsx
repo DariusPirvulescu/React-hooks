@@ -19,7 +19,7 @@ const Form = () => {
     <input name="email" value={values.email} onChange={handleChange} placeholder="email"/>
 
     <h2>Henlo useEffect</h2>
-    <p>*Open the console and toggle henlo*</p>
+    <p>* Check console and toggle henlo *</p>
     <div className="henlo">
       <button onClick={toggleHenlo}>Toggle Henlo</button>
       <br />

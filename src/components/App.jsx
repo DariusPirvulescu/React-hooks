@@ -15,7 +15,9 @@ const App = () => {
     <h1>Form</h1>
     <Form />
 
-    
+    <hr />
+    <h1>User API Fetch</h1>
+    <UserFetch />
   </div>
 };
 
