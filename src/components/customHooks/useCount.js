@@ -1,22 +1,14 @@
 import { useState } from "react";
 
-export const useCount = (initValues) => {
-  const [countValues, setCount] = useState(initValues);
+export const useCount = (initValue) => {
+  const [count, setCount] = useState(initValue);
 
   return [
-    countValues,
+    count,
     function (event) {
       const sign = event.target.innerHTML;
-      let name = event.target.name
 
-      setCount((countValues) => {
-        let newCount = sign === "+" ? countValues[name] + 1 : countValues[name] - 1
-        return {
-          ...countValues,
-          [name]: newCount,
-        };
-      });
-      // setCount(sign === "+" ? count + 1 : count - 1)
+      setCount(sign === "+" ? count + 1 : count - 1);
     },
   ];
 };

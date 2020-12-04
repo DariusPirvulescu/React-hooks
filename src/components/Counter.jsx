@@ -1,8 +1,8 @@
 import React from "react";
 
-import {useCount} from "./customHooks/useCount";
+import { useCount } from "./customHooks/useCount";
 
-const Counter = () => {
+const Counter = ({ initValue }) => {
   // const [count, setCount] = useState(10)
   // const step = 2;
   // // console.log("count", count);
@@ -15,19 +15,19 @@ const Counter = () => {
   //   setCount(count - step)
   // }
 
-  const [countValues, handleChange] = useCount({val1: 10, val2: 5})
+  const [count, handleChange] = useCount(initValue);
 
   return (
-    <div >
-      <h2>{countValues.val1}</h2>
-      <button name="val1" onClick={handleChange}>-</button>
-      <button name="val1" onClick={handleChange}>+</button>
-
-      <h2>{countValues.val2}</h2>
-      <button name="val2" onClick={handleChange}>-</button>
-      <button name="val2" onClick={handleChange}>+</button>
+    <div>
+      <h2>{count}</h2>
+      <button onClick={handleChange}>
+        -
+      </button>
+      <button onClick={handleChange}>
+        +
+      </button>
     </div>
   );
-}
+};
 
 export default Counter;
