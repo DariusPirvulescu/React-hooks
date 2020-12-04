@@ -15,15 +15,15 @@ const Counter = ({ initValue, step }) => {
   //   setCount(count - step)
   // }
 
-  const [count, handleChange] = useCount(initValue, step);
+  const [count, handleClick] = useCount(initValue, step);
 
   return (
     <div>
       <h2>{count}</h2>
-      <button onClick={handleChange}>
+      <button onClick={handleClick}>
         -
       </button>
-      <button onClick={handleChange}>
+      <button onClick={handleClick}>
         +
       </button>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
 import Counter from "./Counter";
+import Form from "./Form";
 
 const App = () => {
   return <div className="container">
@@ -8,6 +9,10 @@ const App = () => {
     <Counter initValue={10} step={1}/>
     <Counter initValue={5} step={5}/>
     <Counter />
+
+    <hr />
+    <h1>Form</h1>
+    <Form />
   </div>
 };
 
