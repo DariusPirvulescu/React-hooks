@@ -13,7 +13,7 @@ export const useFetchUser = (url) => {
           setState({ data: result.name, loading: false });
         }, 500);
       });
-  }, [url]);
+  }, [url, setState]);
 
   return { data, loading };
 };
