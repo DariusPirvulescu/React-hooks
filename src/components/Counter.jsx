@@ -30,4 +30,9 @@ const Counter = ({ initValue, step }) => {
   );
 };
 
+Counter.defaultProps = {
+  initValue: 1, 
+  step: 1
+}
+
 export default Counter;
