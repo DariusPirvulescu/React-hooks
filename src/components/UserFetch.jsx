@@ -22,7 +22,7 @@ const UserFetch = () => {
       <div className="user-name">{loading ? "loading..." : data}</div>
       <br />
       <br />
-      <button onClick={handleClick}>increase count</button>
+      <button onClick={handleClick}>fetch next user</button>
     </div>
   );
 };
