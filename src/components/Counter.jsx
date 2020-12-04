@@ -2,7 +2,7 @@ import React from "react";
 
 import { useCount } from "./customHooks/useCount";
 
-const Counter = ({ initValue }) => {
+const Counter = ({ initValue, step }) => {
   // const [count, setCount] = useState(10)
   // const step = 2;
   // // console.log("count", count);
@@ -15,7 +15,7 @@ const Counter = ({ initValue }) => {
   //   setCount(count - step)
   // }
 
-  const [count, handleChange] = useCount(initValue);
+  const [count, handleChange] = useCount(initValue, step);
 
   return (
     <div>

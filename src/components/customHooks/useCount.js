@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useCount = (initValue) => {
+export const useCount = (initValue, step) => {
   const [count, setCount] = useState(initValue);
 
   return [
@@ -8,7 +8,7 @@ export const useCount = (initValue) => {
     function (event) {
       const sign = event.target.innerHTML;
 
-      setCount(sign === "+" ? count + 1 : count - 1);
+      setCount(sign === "+" ? count + step : count - step);
     },
   ];
 };
