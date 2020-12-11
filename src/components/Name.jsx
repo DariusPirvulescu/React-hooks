@@ -4,10 +4,13 @@ const Name = () => {
   const [value, setValue] = useState("");
 
   const renderCount = useRef(0);
-  // const nameInp = useRef()
+  const prevName = useRef("");
+  const nameInp = useRef();
 
   useEffect(() => {
     renderCount.current += 1;
+
+    prevName.current = value;
   }, [value]);
 
   const handleChange = (e) => {
@@ -16,8 +19,12 @@ const Name = () => {
 
   return (
     <div>
-      <input onChange={handleChange} placeholder="input name" />
+      <input ref={nameInp} onChange={handleChange} placeholder="input name" />
       <p>I rendered {renderCount.current} times</p>
+      <h4>Persist a value after render</h4>
+      <p>My name used to be: </p>
+
+      <p style={{ fontStyle: "italic" }}>{prevName.current}</p>
     </div>
   );
 };
