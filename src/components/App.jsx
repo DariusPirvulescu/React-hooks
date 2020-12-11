@@ -3,6 +3,7 @@ import React from "react";
 import Counter from "./Counter";
 import Form from "./Form";
 import UserFetch from "./UserFetch";
+import Name from "./Name";
 
 const App = () => {
   return (
@@ -19,6 +20,10 @@ const App = () => {
       <hr />
       <h1>User API Fetch</h1>
       <UserFetch />
+      <hr />
+
+      <h1>useRef Hook</h1>
+      <Name />
     </div>
   );
 };
