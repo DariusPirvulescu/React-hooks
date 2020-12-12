@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState, useRef } from "react";
 
 const style = {
   textRoot: {
@@ -7,7 +7,8 @@ const style = {
     height: "30px"
   },
   text: {
-    fontStyle: "italic"
+    fontStyle: "italic",
+    textDecoration: "underline"
   },
   span: {
     fontWeight: "bold"
@@ -16,6 +17,13 @@ const style = {
 
 const Width = () => {
   const [value, setValue] = useState("");
+  const measuredEl = useRef();
+
+  const [measuredWidth, setMeasuredWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    setMeasuredWidth(measuredEl.current.getBoundingClientRect().width);
+  });
 
   return (
     <div>
@@ -25,9 +33,12 @@ const Width = () => {
         placeholder="text to measure"
       />
       <div style={style.textRoot}>
-        <p style={style.text}>{value}</p>
+        <p ref={measuredEl} style={style.text}>
+          {value}
+        </p>
       </div>
-      <p>Text width is:</p>
+      <div>^^^</div>
+      <p>Text width is: {measuredWidth}</p>
     </div>
   );
 };
