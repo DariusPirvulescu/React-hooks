@@ -30,7 +30,7 @@ const Width = () => {
       <input
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder="text to measure"
+        placeholder="type text to measure"
       />
       <div style={style.textRoot}>
         <p ref={measuredEl} style={style.text}>
