@@ -4,6 +4,7 @@ import Counter from "./Counter";
 import Form from "./Form";
 import UserFetch from "./UserFetch";
 import Name from "./Name";
+import Width from "./Width";
 
 const App = () => {
   return (
@@ -20,10 +21,14 @@ const App = () => {
       <hr />
       <h1>User API Fetch</h1>
       <UserFetch />
+      
       <hr />
-
       <h1>useRef Hook</h1>
       <Name />
+
+      <hr/>
+      <h1>useLayoutEffect Hook</h1>
+      <Width />
     </div>
   );
 };
