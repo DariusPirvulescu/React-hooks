@@ -38,7 +38,7 @@ const Width = () => {
         </p>
       </div>
       <div>^^^</div>
-      <p>Text width is: {measuredWidth}</p>
+      <p>Text's width is: {measuredWidth}</p>
     </div>
   );
 };
