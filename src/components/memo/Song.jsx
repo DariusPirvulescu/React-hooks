@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
+import { useRenderCount } from "../customHooks/useRenderCount";
+
 const style = {
   root: {
     backgroundColor: "gray",
@@ -9,11 +11,7 @@ const style = {
 };
 
 export const Song = ({ name, artist, type }) => {
-  const renderCount = useRef(1);
-
-  useEffect(() => {
-    renderCount.current += 1;
-  });
+  const renderCount = useRenderCount();
 
   return (
     <div>
@@ -31,7 +29,7 @@ export const Song = ({ name, artist, type }) => {
         <br />
         has rendered
         <br />
-        {renderCount.current} {renderCount.current > 1 ? "times" : "time"}
+        {renderCount} {renderCount > 1 ? "times" : "time"}
       </div>
     </div>
   );

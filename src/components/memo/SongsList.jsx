@@ -9,7 +9,7 @@ const style = {
 };
 
 const SongsList = () => {
-  const [renderCount, setRenderCount] = useState(0);
+  const [renderCount, setRenderCount] = useState(1);
 
   const render = () => {
     setRenderCount(renderCount + 1);
@@ -20,7 +20,7 @@ const SongsList = () => {
       <p>
         SongsList
         <br />
-        has rendered {renderCount} times
+        has rendered {renderCount} {renderCount > 1 ? "times" : "time"}
       </p>
 
       <button onClick={render}>Render Parent </button>
