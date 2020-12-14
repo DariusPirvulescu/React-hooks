@@ -5,6 +5,7 @@ import Form from "./Form";
 import UserFetch from "./UserFetch";
 import Name from "./Name";
 import Width from "./Width";
+import SongsList from "./memo/SongsList";
 
 const App = () => {
   return (
@@ -21,14 +22,18 @@ const App = () => {
       <hr />
       <h1>User API Fetch</h1>
       <UserFetch />
-      
+
       <hr />
       <h1>useRef Hook</h1>
       <Name />
 
-      <hr/>
+      <hr />
       <h1>useLayoutEffect Hook</h1>
       <Width />
+
+      <hr />
+      <h1>{"{ Memo }"} + useCallback = love</h1>
+      <SongsList />
     </div>
   );
 };
