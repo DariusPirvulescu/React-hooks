@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Song from "./Song";
+import { Song, MemoizedSong } from "./Song";
 
 const SongsList = () => {
+  const [renderCount, setRenderCount] = useState(0);
+
+  const render = () => {
+    setRenderCount(renderCount + 1);
+  };
   return (
     <div>
       <h2>SongsList</h2>
-      <Song />
+      <p>
+        SongsList
+        <br />
+        has rendered {renderCount} times
+      </p>
+
+      <button onClick={render}>Render Parent</button>
+      <h4>Default Child</h4>
+      <Song
+        name="National Anthem of USSR"
+        artist="The Alexandrov Red Army Chorus"
+        type="Default"
+      />
+
+      <h4>Memoized Child</h4>
+      <MemoizedSong
+        name="Wide is My Motherland"
+        artist="Isaac Dunaevsky"
+        type="Memoized"
+      />
+      <br />
     </div>
   );
 };
