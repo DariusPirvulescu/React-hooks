@@ -1,19 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 import { Song, MemoizedSong } from "./Song";
+import { MemoizedLikes } from "./Likes";
 
 const style = {
   title: {
-    textDecoration: "underline"
-  }
+    textDecoration: "underline",
+  },
 };
 
 const SongsList = () => {
   const [renderCount, setRenderCount] = useState(1);
+  const [likes, setLikes] = useState(20);
+  const likeSteps = [1, 5, 10];
 
   const render = () => {
     setRenderCount(renderCount + 1);
   };
+
+  /** USE CALLBACK */
+  const increment = useCallback(
+    (step) => {
+      setLikes((prevLikes) => setLikes(prevLikes + step));
+    },
+    [setLikes]
+  );
+
   return (
     <div>
       <h2>SongsList</h2>
@@ -40,6 +52,11 @@ const SongsList = () => {
         type="Memoized"
       />
       <br />
+      <p>SongList Likes: {likes}</p>
+      {likeSteps.map((step) => {
+        return <MemoizedLikes increment={increment} step={step} key={step} />;
+      })}
+      <p>Because of useCallback, Memoized Likes has rendered only once (check console)</p>
     </div>
   );
 };

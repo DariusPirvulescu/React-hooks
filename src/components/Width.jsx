@@ -4,15 +4,15 @@ const style = {
   textRoot: {
     display: "flex",
     justifyContent: "center",
-    height: "30px"
+    height: "30px",
   },
   text: {
     fontStyle: "italic",
-    textDecoration: "underline"
+    textDecoration: "underline",
   },
   span: {
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
 };
 
 const Width = () => {
