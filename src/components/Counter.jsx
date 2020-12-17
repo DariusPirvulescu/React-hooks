@@ -20,19 +20,15 @@ const Counter = ({ initValue, step }) => {
   return (
     <div>
       <h2>{count}</h2>
-      <button onClick={handleClick}>
-        -
-      </button>
-      <button onClick={handleClick}>
-        +
-      </button>
+      <button onClick={handleClick}>-</button>
+      <button onClick={handleClick}>+</button>
     </div>
   );
 };
 
 Counter.defaultProps = {
-  initValue: 1, 
-  step: 1
-}
+  initValue: 1,
+  step: 1,
+};
 
 export default Counter;

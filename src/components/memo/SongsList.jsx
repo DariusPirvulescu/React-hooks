@@ -56,7 +56,10 @@ const SongsList = () => {
       {likeSteps.map((step) => {
         return <MemoizedLikes increment={increment} step={step} key={step} />;
       })}
-      <p>Because of useCallback, Memoized Likes has rendered only once (check console)</p>
+      <p>
+        Because of useCallback, Memoized Likes has rendered only once (check
+        console)
+      </p>
     </div>
   );
 };

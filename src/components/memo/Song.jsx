@@ -6,8 +6,8 @@ const style = {
   root: {
     backgroundColor: "gray",
     padding: "10px 0",
-    marginBottom: "5px"
-  }
+    marginBottom: "5px",
+  },
 };
 
 export const Song = ({ name, artist, type }) => {
