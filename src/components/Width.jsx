@@ -3,7 +3,7 @@ import React, { useLayoutEffect, useState, useRef } from "react";
 const style = {
   textRoot: {
     display: "flex",
-    "justify-content": "center",
+    justifyContent: "center",
     height: "30px"
   },
   text: {
