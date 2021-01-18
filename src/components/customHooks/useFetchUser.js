@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useFetchUser = (url) => {
   const [{ data, loading }, setState] = useState({ loading: true, data: null });
@@ -6,13 +7,32 @@ export const useFetchUser = (url) => {
   useEffect(() => {
     setState({ data: null, loading: true });
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((result) => {
-        setTimeout(() => {
-          setState({ data: result.name, loading: false });
-        }, 500);
-      });
+    // fetch(url)
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     setTimeout(() => {
+    //       setState({ data: result.name, loading: false });
+    //     }, 500);
+    //   });
+
+    /** Using Axios async/await to fetch */
+    // const fetchUser = async () => {
+    //   const result = await axios.get(url)
+    //   console.log(result)
+    //   setState({ data: result.data.name, loading: false})
+    // }
+
+    // fetchUser()
+
+    /** Or even keuler, call function without
+     * assigning it to a variable
+     */
+
+    (async () => {
+      const result = await axios.get(url);
+      console.log(result);
+      setState({ data: result.data.name, loading: false });
+    })();
   }, [url, setState]);
 
   return { data, loading };
