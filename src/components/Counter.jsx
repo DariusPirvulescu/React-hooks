@@ -28,7 +28,23 @@ const Counter = ({ initValue, step }) => {
 
 Counter.defaultProps = {
   initValue: 1,
-  step: 1,
+  step: 1
 };
 
 export default Counter;
+
+/**
+ * Adding a manual event listener
+ * (outside of React)
+ *
+ * useEffect(() => {
+ *  document.body.addEventListener("clikc", cb)
+ *
+ *  // Also remove it with the useEffect cleanup fct
+ *
+ * return () {
+ *  document.body.removeEventListener("click", cb)
+ * }
+ *
+ * }, [])
+ */

@@ -39,7 +39,8 @@ export const useFetchUser = (url) => {
 };
 
 /**
- * When useEffect runs:
+ * When does useEffect run ?
+ *
  * useEffect(cb, x)
  * x is always an Array []
  *
