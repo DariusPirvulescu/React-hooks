@@ -27,7 +27,6 @@ export const useFetchUser = (url) => {
     /** Or even keuler, call function without
      * assigning it to a variable
      */
-
     (async () => {
       const result = await axios.get(url);
       console.log(result);
@@ -55,4 +54,18 @@ export const useFetchUser = (url) => {
  * cb runs during initial render and
  * (every rerender + after data value changes)
  *
+ */
+
+/**
+ * Axios config
+ *
+ * instead of writing the params in the url
+ * 'https://site.com/?name=Dario'
+ *
+ * axios allows to pass params in the .get() fct
+ * axios.get('https://site.com/', {
+ *   params: {
+ *     name: 'Dario'
+ *   }
+ * })
  */
