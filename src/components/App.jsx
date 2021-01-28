@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
+
+import { LuckyNumberContext } from "./contexts/LuckyNumberContext";
 
 import Counter from "./Counter";
 import Form from "./Form";
@@ -6,8 +8,16 @@ import UserFetch from "./UserFetch";
 import Name from "./Name";
 import Width from "./Width";
 import SongsList from "./memo/SongsList";
+import LuckyContextChild from "./LuckyContextChild";
 
 const App = () => {
+  const [luckyNr, setLuckyNumber] = useState(0);
+
+  const luckyProviderValue = useMemo(() => ({ luckyNr, setLuckyNumber }), [
+    luckyNr,
+    setLuckyNumber
+  ]);
+
   return (
     <div className="container">
       <h1>Counter</h1>
@@ -30,10 +40,15 @@ const App = () => {
       <hr />
       <h1>useLayoutEffect Hook</h1>
       <Width />
+      <LuckyNumberContext.Provider value={luckyProviderValue}>
+        <hr />
+        <h1>{"{ Memo }"} + useCallback = love</h1>
+        <SongsList />
 
-      <hr />
-      <h1>{"{ Memo }"} + useCallback = love</h1>
-      <SongsList />
+        <hr />
+        <h1>LuckyNumber Context </h1>
+        <LuckyContextChild />
+      </LuckyNumberContext.Provider>
     </div>
   );
 };

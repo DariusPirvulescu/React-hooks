@@ -1,18 +1,22 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
+
+import { LuckyNumberContext } from "../contexts/LuckyNumberContext";
 
 import { Song, MemoizedSong } from "./Song";
 import { MemoizedLikes } from "./Likes";
 
 const style = {
   title: {
-    textDecoration: "underline",
-  },
+    textDecoration: "underline"
+  }
 };
 
 const SongsList = () => {
   const [renderCount, setRenderCount] = useState(1);
   const [likes, setLikes] = useState(20);
   const likeSteps = [1, 5, 10];
+
+  const { luckyNr } = useContext(LuckyNumberContext);
 
   const render = () => {
     setRenderCount(renderCount + 1);
@@ -60,6 +64,10 @@ const SongsList = () => {
         Because of useCallback, Memoized Likes has rendered only once (check
         console)
       </p>
+      <br />
+      <h3 style={{ textDecoration: "underline" }}>
+        Lucky number is: {luckyNr}
+      </h3>
     </div>
   );
 };
