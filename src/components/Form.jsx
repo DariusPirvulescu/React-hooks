@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import Henlo from "./Henlo";
 
 import { useForm } from "./customHooks/useForm";
 
+import { userContext } from "./contexts/userContext";
+
 const Form = () => {
   const [values, handleChange] = useForm({ name: "", email: "" });
   const [showHenlo, setShowHenlo] = useState(true);
+  const { user } = useContext(userContext);
 
   const toggleHenlo = () => {
     setShowHenlo(() => !showHenlo);
@@ -37,6 +40,8 @@ const Form = () => {
         <br />
         {showHenlo && <Henlo />}
       </div>
+      <br />
+      <p> currentUser {user} </p>
     </div>
   );
 };

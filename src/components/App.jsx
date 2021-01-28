@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from "react";
 
+// contexts
 import { LuckyNumberContext } from "./contexts/LuckyNumberContext";
+import { useContext, userContext } from "./contexts/userContext";
 
 import Counter from "./Counter";
 import Form from "./Form";
@@ -12,6 +14,7 @@ import LuckyContextChild from "./LuckyContextChild";
 
 const App = () => {
   const [luckyNr, setLuckyNumber] = useState(0);
+  const [user, setUser] = useState(null);
 
   const luckyProviderValue = useMemo(() => ({ luckyNr, setLuckyNumber }), [
     luckyNr,
@@ -20,18 +23,21 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Counter</h1>
-      <Counter initValue={10} step={1} />
-      <Counter initValue={5} step={5} />
-      <Counter />
+      <p>logged-in user: {user} </p>
+      <userContext.Provider value={{ user, setUser }}>
+        <h1>Counter</h1>
+        <Counter initValue={10} step={1} />
+        <Counter initValue={5} step={5} />
+        <Counter />
 
-      <hr />
-      <h1>Form</h1>
-      <Form />
+        <hr />
+        <h1>Form</h1>
+        <Form />
 
-      <hr />
-      <h1>User API Fetch</h1>
-      <UserFetch />
+        <hr />
+        <h1>User API Fetch</h1>
+        <UserFetch />
+      </userContext.Provider>
 
       <hr />
       <h1>useRef Hook</h1>

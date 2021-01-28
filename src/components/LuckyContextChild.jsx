@@ -8,9 +8,8 @@ const LuckyContextChild = () => {
   return (
     <>
       <h5>
-        This component is under the
-        <pre>luckyNumber context</pre>
-        together with the Memo (SongList) component.
+        This component is under the <em>luckyNumber context</em> together with
+        the Memo (SongList) component.
       </h5>
       <h3 style={{ textDecoration: "underline" }}>
         Lucky number is: {luckyNr}

@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { useFetchUser } from "./customHooks/useFetchUser";
 
+// context
+import { userContext } from "./contexts/userContext";
+
 const UserFetch = () => {
   const [count, setCount] = useState(1);
+  const { setUser } = useContext(userContext);
 
   const handleClick = () => {
     setCount((count) => {
@@ -25,6 +29,9 @@ const UserFetch = () => {
     `https://jsonplaceholder.typicode.com/users/${count}`
   );
 
+  if (data) {
+    setUser(data);
+  }
   return (
     <div className="user-fetch">
       <span>user#: {count}</span>
